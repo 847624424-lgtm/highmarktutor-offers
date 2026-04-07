@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学员Offer案例库 | 海马课堂</title>
+    <link rel="canonical" href="https://offers.highmarktutor.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        /* ==================== THEME VARIABLES ==================== */
+        :root, [data-theme="light"] {
+            --brand-50: #eff6ff; --brand-100: #dbeafe; --brand-200: #bfdbfe; --brand-300: #93c5fd;
+            --brand-400: #60a5fa; --brand-500: #3b82f6; --brand-600: #2563eb; --brand-700: #1d4ed8;
+            --brand-800: #1e40af; --brand-900: #1e3a8a; --brand-950: #172554;
+            --gray-50: #f8fafc; --gray-100: #f1f5f9; --gray-200: #e2e8f0; --gray-300: #cbd5e1;
+            --gray-400: #94a3b8; --gray-500: #64748b; --gray-600: #475569; --gray-700: #334155;
+            --gray-800: #1e293b; --gray-900: #0f172a;
+            --success: #059669; --success-light: #d1fae5; --success-bg: #ecfdf5;
+            --warning: #d97706; --warning-light: #fef3c7; --warning-bg: #fffbeb;
+            --danger: #dc2626; --danger-light: #fee2e2; --danger-bg: #fef2f2;
+            --info: #0891b2; --info-light: #cffafe; --info-bg: #ecfeff;
+            --header-bg: #ffffff;
+            --header-border: var(--gray-200);
+            --body-bg: #f0f4f8;
+            --card-bg: #ffffff;
+            --card-border: var(--gray-200);
+            --card-hover-shadow: 0 8px 30px -4px rgba(0,0,0,0.08), 0 2px 8px -2px rgba(0,0,0,0.04);
+            --filter-bg: #ffffff;
+            --modal-bg: #ffffff;
+            --modal-overlay-bg: rgba(15,23,42,0.45);
+            --input-bg: #ffffff;
+            --chip-bg: var(--gray-100);
+            --chip-hover-bg: var(--gray-200);
+            --chip-active-bg: var(--brand-50);
+            --chip-active-border: var(--brand-200);
+            --text-primary: var(--gray-900);
+            --text-secondary: var(--gray-600);
+            --text-muted: var(--gray-400);
+            --text-on-brand: #ffffff;
+            --stat-card-bg: #ffffff;
+            --detail-meta-bg: var(--gray-50);
+            --detail-meta-border: var(--gray-100);
+            --generator-bg: var(--gray-50);
+            --gen-content-bg: #ffffff;
+            --offer-item-bg: var(--gray-50);
+            --footer-bg: var(--gray-100);
+            --select-bg: var(--gray-50);
+            --shadow-xs: 0 1px 2px rgba(0,0,0,0.03);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.06);
+            --shadow-lg: 0 12px 40px rgba(0,0,0,0.1);
+            --header-h: 64px;
+            --radius-sm: 6px; --radius-md: 10px; --radius-lg: 14px; --radius-xl: 18px;
+        }
+
+        [data-theme="dark"] {
+            --brand-50: #172554; --brand-100: #1e3a8a; --brand-200: #1e40af; --brand-300: #1d4ed8;
+            --brand-400: #2563eb; --brand-500: #3b82f6; --brand-600: #60a5fa; --brand-700: #93c5fd;
+            --brand-800: #bfdbfe; --brand-900: #dbeafe; --brand-950: #eff6ff;
+            --gray-50: #0f172a; --gray-100: #1e293b; --gray-200: #334155; --gray-300: #475569;
+            --gray-400: #64748b; --gray-500: #94a3b8; --gray-600: #cbd5e1; --gray-700: #e2e8f0;
+            --gray-800: #f1f5f9; --gray-900: #f8fafc;
+            --success: #34d399; --success-light: #064e3b; --success-bg: #022c22;
+            --warning: #fbbf24; --warning-light: #78350f; --warning-bg: #451a03;
+            --danger: #f87171; --danger-light: #991b1b; --danger-bg: #450a0a;
+            --info: #22d3ee; --info-light: #155e75; --info-bg: #083344;
+            --header-bg: rgba(15,23,42,0.9);
+            --header-border: var(--gray-200);
+            --body-bg: #0c1222;
+            --card-bg: #1a2332;
+            --card-border: var(--gray-200);
+            --card-hover-shadow: 0 8px 30px -4px rgba(0,0,0,0.3), 0 0 0 1px rgba(59,130,246,0.15);
+            --filter-bg: #1a2332;
+            --modal-bg: #1a2332;
+            --modal-overlay-bg: rgba(0,0,0,0.6);
+            --input-bg: var(--gray-100);
+            --chip-bg: var(--gray-100);
+            --chip-hover-bg: var(--gray-200);
+            --chip-active-bg: rgba(59,130,246,0.15);
+            --chip-active-border: rgba(59,130,246,0.3);
+            --text-primary: var(--gray-900);
+            --text-secondary: var(--gray-600);
+            --text-muted: var(--gray-500);
+            --text-on-brand: #ffffff;
+            --stat-card-bg: #1a2332;
+            --detail-meta-bg: var(--gray-100);
+            --detail-meta-border: var(--gray-200);
+            --generator-bg: var(--gray-100);
+            --gen-content-bg: var(--gray-100);
+            --offer-item-bg: var(--gray-100);
+            --footer-bg: var(--gray-100);
+            --select-bg: var(--gray-100);
+            --shadow-xs: 0 1px 2px rgba(0,0,0,0.2);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.2);
+            --shadow-lg: 0 12px 40px rgba(0,0,0,0.3);
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--body-bg); color: var(--text-primary);
+            min-height: 100vh; font-size: 14px; line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        /* ==================== HEADER ==================== */
+        .top-header {
+            height: var(--header-h); background: var(--header-bg);
+            border-bottom: 1px solid var(--header-border);
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 28px; position: sticky; top: 0; z-index: 100;
+            box-shadow: var(--shadow-xs);
+            transition: background 0.3s ease, border-color 0.3s ease;
+        }
+        .header-brand { display: flex; align-items: center; gap: 14px; }
+        .brand-icon {
+            width: 40px; height: 40px;
+            background: linear-gradient(135deg, #4338ca, #6366f1);
+            border-radius: var(--radius-md);
+            display: flex; align-items: center; justify-content: center; color: #fff;
+            box-shadow: 0 4px 12px rgba(79,70,229,0.3);
+        }
+        .brand-icon svg { width: 20px; height: 20px; }
+        .brand-text h1 { font-size: 17px; font-weight: 700; color: var(--text-primary); letter-spacing: -0.01em; }
+        .brand-text p { font-size: 11px; color: var(--text-muted); margin-top: 1px; font-weight: 500; letter-spacing: 0.02em; }
+
+        .header-actions { display: flex; align-items: center; gap: 8px; }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            width: 38px; height: 38px; border-radius: var(--radius-md);
+            border: 1px solid var(--card-border); background: var(--card-bg);
+            cursor: pointer; display: flex; align-items: center; justify-content: center;
+            font-size: 18px; transition: all 0.2s ease; flex-shrink: 0;
+        }
+        .theme-toggle:hover { background: var(--chip-bg); transform: scale(1.05); }
+
+        /* ==================== BUTTONS ==================== */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+            padding: 8px 16px; border-radius: var(--radius-md); border: none;
+            font-size: 13px; font-weight: 500; cursor: pointer;
+            font-family: inherit; transition: all 0.15s ease; white-space: nowrap;
+        }
+        .btn svg { width: 16px; height: 16px; }
+        .btn-primary {
+            background: var(--brand-600);
+            color: #fff; box-shadow: 0 1px 3px rgba(99,102,241,0.25);
+        }
+        .btn-primary:hover { background: var(--brand-700); box-shadow: 0 3px 10px rgba(99,102,241,0.3); }
+        .btn-secondary { background: var(--card-bg); color: var(--text-secondary); border: 1px solid var(--card-border); }
+        .btn-secondary:hover { background: var(--chip-bg); border-color: var(--gray-300); }
+        .btn-ghost { background: transparent; color: var(--text-muted); }
+        .btn-ghost:hover { background: var(--chip-bg); color: var(--text-secondary); }
+        .btn-danger-ghost { background: transparent; color: var(--danger); }
+        .btn-danger-ghost:hover { background: var(--danger-bg); }
+        .btn-sm { padding: 6px 14px; font-size: 12px; }
+        .btn-xs { padding: 3px 8px; font-size: 11px; border-radius: var(--radius-sm); }
+
+        /* ==================== CONTENT ==================== */
+        .content-area {
+            max-width: 1400px; margin: 0 auto;
+            padding: 28px 32px 60px;
+        }
+
+        .page-header { margin-bottom: 28px; }
+        .page-header h1 { font-size: 26px; font-weight: 700; color: var(--text-primary); letter-spacing: -0.03em; }
+        .page-header p { font-size: 13px; color: var(--text-muted); margin-top: 6px; }
+
+        /* Stats Cards */
+        .stats-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 16px; margin-bottom: 28px;
+        }
+        .stat-card {
+            background: var(--stat-card-bg); border: 1px solid var(--card-border);
+            border-radius: var(--radius-lg); padding: 20px 22px;
+            transition: all 0.2s ease; position: relative; overflow: hidden;
+            box-shadow: var(--shadow-xs);
+        }
+        .stat-card::after {
+            content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%;
+            border-radius: 0 3px 3px 0;
+        }
+        .stat-card:nth-child(1)::after { background: var(--brand-500); }
+        .stat-card:nth-child(2)::after { background: #059669; }
+        .stat-card:nth-child(3)::after { background: #8b5cf6; }
+        .stat-card:nth-child(4)::after { background: #f59e0b; }
+        .stat-card:hover { box-shadow: var(--shadow-md); transform: translateY(-1px); }
+        .stat-icon {
+            width: 40px; height: 40px; border-radius: var(--radius-md);
+            display: flex; align-items: center; justify-content: center; margin-bottom: 12px;
+        }
+        .stat-card:nth-child(1) .stat-icon { background: rgba(99,102,241,0.08); color: var(--brand-500); }
+        .stat-card:nth-child(2) .stat-icon { background: rgba(5,150,105,0.08); color: #059669; }
+        .stat-card:nth-child(3) .stat-icon { background: rgba(139,92,246,0.08); color: #8b5cf6; }
+        .stat-card:nth-child(4) .stat-icon { background: rgba(245,158,11,0.08); color: #f59e0b; }
+        .stat-value { font-size: 28px; font-weight: 700; color: var(--text-primary); line-height: 1; letter-spacing: -0.03em; }
+        .stat-unit { font-size: 20px; font-weight: 600; margin-left: 1px; }
+        .stat-label { font-size: 12px; color: var(--text-muted); margin-top: 6px; font-weight: 500; }
+
+        .stats-section { margin-bottom: 28px; }
+
+        .site-footer {
+            text-align: center;
+            padding: 32px 0 28px;
+            color: var(--text-muted);
+            font-size: 13px;
+            border-top: 1px solid var(--card-border);
+            margin-top: 40px;
+        }
+        .site-footer .copyright { margin-bottom: 8px; }
+        .site-footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.15s ease;
+        }
+        .site-footer a:hover { color: var(--brand-500); text-decoration: underline; }
+
+        /* ==================== FILTER BAR ==================== */
+        .filter-bar {
+            background: var(--filter-bg); border: 1px solid var(--card-border);
+            border-radius: var(--radius-lg); padding: 12px 18px; margin-bottom: 20px;
+            display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+            box-shadow: var(--shadow-sm);
+            transition: background 0.3s ease, border-color 0.3s ease;
+        }
+        .filter-select {
+            height: 34px; padding: 0 28px 0 10px;
+            border: 1px solid var(--gray-300); border-radius: var(--radius-md);
+            font-size: 13px; font-family: inherit; color: var(--text-primary);
+            background: var(--select-bg);
+            appearance: none; -webkit-appearance: none;
+            cursor: pointer; transition: all 0.15s ease; outline: none; min-width: 115px;
+            background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%2394a3b8' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat; background-position: right 8px center;
+        }
+        .filter-select:hover { border-color: var(--gray-400); background-color: var(--chip-hover-bg); }
+        .filter-select:focus { border-color: var(--brand-500); box-shadow: 0 0 0 3px rgba(99,102,241,0.12); }
+        .filter-select option { background: var(--card-bg); color: var(--text-primary); }
+
+        .filter-divider { width: 1px; height: 22px; background: var(--card-border); flex-shrink: 0; margin: 0 2px; }
+
+        .search-box {
+            display: flex; align-items: center; gap: 7px;
+            border: 1px solid var(--gray-300); border-radius: var(--radius-md);
+            padding: 0 10px; transition: all 0.15s ease;
+            background: var(--select-bg); flex: 1; min-width: 160px; max-width: 300px;
+        }
+        .search-box:focus-within { border-color: var(--brand-500); box-shadow: 0 0 0 3px rgba(99,102,241,0.12); background: var(--input-bg); }
+        .search-box svg { width: 14px; height: 14px; color: var(--text-muted); flex-shrink: 0; }
+        .search-box input {
+            border: none; background: transparent; outline: none;
+            font-size: 13px; color: var(--text-primary); width: 100%;
+            font-family: inherit; padding: 6px 0;
+        }
+        .search-box input::placeholder { color: var(--text-muted); }
+
+        .filter-result-count { font-size: 12px; color: var(--text-muted); margin-left: auto; white-space: nowrap; }
+        .filter-result-count strong { color: var(--brand-500); font-weight: 600; }
+
+        .filter-panel-header,
+        .filter-rows, .filter-row, .filter-label, .filter-options,
+        .chip { display: none; }
+
+        /* ==================== CARD GRID ==================== */
+        .card-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 18px;
+        }
+
+        .offer-card {
+            background: var(--card-bg); border: 1px solid var(--card-border);
+            border-radius: var(--radius-lg); overflow: hidden;
+            cursor: pointer; transition: all 0.25s ease; position: relative;
+        }
+        .offer-card:hover {
+            border-color: rgba(99,102,241,0.2);
+            box-shadow: var(--card-hover-shadow);
+            transform: translateY(-3px);
+        }
+        .card-accent { height: 4px; width: 100%; }
+        .card-accent.uk { background: var(--brand-600); }
+        .card-accent.us { background: linear-gradient(90deg, #059669, #34d399); }
+        .card-accent.au { background: linear-gradient(90deg, #ea580c, #fb923c); }
+        .card-accent.ca { background: linear-gradient(90deg, #dc2626, #f87171); }
+        .card-accent.hk { background: linear-gradient(90deg, #7c3aed, #a78bfa); }
+        .card-accent.sg { background: linear-gradient(90deg, #0891b2, #22d3ee); }
+        .card-accent.other { background: linear-gradient(90deg, #64748b, #94a3b8); }
+
+        .card-body { padding: 22px; }
+        .card-top-row {
+            display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px;
+        }
+        .card-student-info h3 { font-size: 16px; font-weight: 600; color: var(--text-primary); }
+        .card-school { font-size: 12px; color: var(--text-muted); margin-top: 3px; }
+        .card-meta { display: flex; gap: 6px; margin-top: 10px; flex-wrap: wrap; }
+        .meta-tag { font-size: 11px; padding: 3px 10px; border-radius: 6px; font-weight: 500; }
+        .meta-tag.year { background: rgba(99,102,241,0.08); color: var(--brand-500); }
+        .meta-tag.gpa { background: rgba(5,150,105,0.08); color: #059669; }
+        .meta-tag.lang { background: rgba(245,158,11,0.08); color: #d97706; }
+        .meta-tag.offer-type { background: rgba(139,92,246,0.08); color: #7c3aed; }
+
+        .card-offers { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--card-border); }
+        .card-offers-title {
+            font-size: 11px; font-weight: 600; color: var(--text-muted);
+            text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px;
+        }
+        .offer-item {
+            display: flex; align-items: center; gap: 12px;
+            padding: 10px 14px; background: var(--offer-item-bg);
+            border-radius: var(--radius-md); margin-bottom: 8px; transition: all 0.15s ease;
+        }
+        .offer-card:hover .offer-item { background: rgba(99,102,241,0.04); }
+        .offer-item:last-child { margin-bottom: 0; }
+        .offer-icon {
+            width: 36px; height: 36px; border-radius: var(--radius-sm);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px; font-weight: 700; color: #fff; flex-shrink: 0; letter-spacing: -0.02em;
+        }
+        .offer-icon.main { background: var(--brand-600); }
+        .offer-icon.sub { background: var(--gray-300); color: var(--gray-700); }
+        .offer-detail h4 { font-size: 13px; font-weight: 600; color: var(--text-primary); line-height: 1.3; }
+        .offer-detail p { font-size: 11px; color: var(--text-muted); }
+
+        .card-footer {
+            padding: 12px 22px; border-top: 1px solid var(--card-border);
+            display: flex; justify-content: space-between; align-items: center;
+            background: var(--footer-bg);
+        }
+        .card-location { font-size: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 4px; }
+        .card-actions { display: flex; gap: 4px; opacity: 0; transition: opacity 0.2s ease; }
+        .offer-card:hover .card-actions { opacity: 1; }
+        .card-action-btn {
+            width: 30px; height: 30px; border-radius: var(--radius-sm); border: 1px solid var(--card-border);
+            background: var(--card-bg); cursor: pointer; color: var(--text-muted);
+            display: flex; align-items: center; justify-content: center;
+            transition: all 0.15s ease; font-size: 12px;
+        }
+        .card-action-btn:hover { background: var(--chip-bg); color: var(--text-secondary); }
+        .card-action-btn.del:hover { background: var(--danger-bg); color: var(--danger); border-color: rgba(248,113,113,0.3); }
+
+        .card-service-tag { margin-top: 14px; display: flex; gap: 6px; flex-wrap: wrap; }
+        .service-tag {
+            font-size: 11px;             color: var(--brand-500); background: rgba(99,102,241,0.06);
+            padding: 3px 10px; border-radius: 6px; border: 1px solid rgba(99,102,241,0.1);
+            font-weight: 500;
+        }
+
+        /* Empty State */
+        .empty-state { text-align: center; padding: 80px 20px; }
+        .empty-state .icon { font-size: 48px; margin-bottom: 16px; opacity: 0.5; }
+        .empty-state h3 { font-size: 16px; color: var(--text-secondary); font-weight: 600; margin-bottom: 8px; }
+        .empty-state p { font-size: 13px; color: var(--text-muted); }
+
+        /* ==================== MODAL ==================== */
+        .modal-overlay {
+            position: fixed; inset: 0; background: var(--modal-overlay-bg);
+            z-index: 200; display: none; align-items: flex-start;
+            justify-content: center; padding: 40px 20px;
+            backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+            overflow-y: auto;
+        }
+        .modal-overlay.show { display: flex; }
+        .modal {
+            background: var(--modal-bg); border-radius: var(--radius-xl);
+            width: 100%; box-shadow: var(--shadow-lg);
+            animation: modalIn 0.25s ease;
+            border: 1px solid var(--card-border);
+        }
+        @keyframes modalIn { from { opacity: 0; transform: translateY(-12px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+        .modal-detail { max-width: 860px; }
+        .modal-form { max-width: 640px; }
+        .modal-import { max-width: 500px; }
+        .modal-confirm { max-width: 440px; }
+
+        .modal-header {
+            padding: 24px 28px 18px; display: flex; justify-content: space-between; align-items: flex-start;
+            border-bottom: 1px solid var(--card-border); position: sticky; top: 0;
+            background: var(--modal-bg); z-index: 10; border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+        }
+        .modal-header h2 { font-size: 18px; font-weight: 600; color: var(--text-primary); }
+        .modal-header p { font-size: 13px; color: var(--text-muted); margin-top: 2px; }
+        .modal-close {
+            width: 34px; height: 34px; border-radius: var(--radius-sm);
+            border: none; background: var(--chip-bg); cursor: pointer;
+            font-size: 16px; color: var(--text-muted);
+            display: flex; align-items: center; justify-content: center; transition: all 0.15s ease;
+        }
+        .modal-close:hover { background: var(--chip-hover-bg); color: var(--text-secondary); }
+        .modal-body { padding: 22px 28px 28px; }
+
+        /* Detail */
+        .detail-meta-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px;
+        }
+        .detail-meta-item {
+            padding: 16px 18px; background: var(--detail-meta-bg);
+            border-radius: var(--radius-md); border: 1px solid var(--detail-meta-border);
+        }
+        .detail-meta-item .label { font-size: 11px; color: var(--text-muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; }
+        .detail-meta-item .value { font-size: 14px; font-weight: 600; color: var(--text-primary); margin-top: 5px; }
+        .detail-meta-item .value.accent { color: var(--brand-500); }
+
+        .detail-section { margin-bottom: 24px; }
+        .detail-section-title {
+            font-size: 14px; font-weight: 600; color: var(--text-primary);
+            margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--card-border);
+            display: flex; align-items: center; gap: 8px;
+        }
+        .detail-section-title .dot { width: 4px; height: 14px; border-radius: 2px; background: var(--brand-500); }
+        .detail-text { font-size: 14px; color: var(--text-secondary); line-height: 1.8; white-space: pre-wrap; }
+
+        .offer-detail-card {
+            display: flex; align-items: center; gap: 14px;
+            padding: 16px 18px; background: var(--detail-meta-bg);
+            border-radius: var(--radius-md); margin-bottom: 10px; border: 1px solid var(--detail-meta-border);
+        }
+        .offer-detail-icon {
+            width: 46px; height: 46px; border-radius: var(--radius-md);
+            background: var(--brand-600);
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-size: 17px; font-weight: 700; flex-shrink: 0;
+        }
+        .offer-detail-info h4 { font-size: 15px; font-weight: 600; color: var(--text-primary); }
+        .offer-detail-info p { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+        .offer-type-badge {
+            margin-left: auto; font-size: 11px; font-weight: 600;
+            padding: 4px 12px; border-radius: 20px;
+            background: rgba(99,102,241,0.08); color: var(--brand-500); border: 1px solid rgba(99,102,241,0.12);
+        }
+
+        .detail-actions {
+            display: flex; gap: 8px; margin-bottom: 20px;
+            padding-bottom: 16px; border-bottom: 1px solid var(--card-border);
+        }
+
+        /* Generator */
+        .generator-box {
+            background: var(--generator-bg); border: 1px solid var(--card-border);
+            border-radius: var(--radius-lg); padding: 24px; margin-top: 8px;
+        }
+        .generator-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+        .generator-header h3 { font-size: 15px; font-weight: 600; color: var(--text-primary); }
+        .gen-actions { display: flex; gap: 6px; }
+
+        .template-tabs {
+            display: flex; gap: 2px; margin-bottom: 16px;
+            background: var(--chip-bg); padding: 3px; border-radius: var(--radius-md); width: fit-content;
+        }
+        .template-tab {
+            padding: 7px 16px; font-size: 12px; font-weight: 500;
+            cursor: pointer; color: var(--text-muted); border: none;
+            background: transparent; border-radius: var(--radius-sm);
+            transition: all 0.15s ease; font-family: inherit;
+        }
+        .template-tab:hover { color: var(--text-secondary); }
+        .template-tab.active { background: var(--card-bg); color: var(--text-primary); box-shadow: var(--shadow-sm); }
+
+        .generated-content {
+            background: var(--gen-content-bg); border: 1px solid var(--card-border);
+            border-radius: var(--radius-md); padding: 22px;
+            font-size: 13px; line-height: 1.8; color: var(--text-secondary);
+            white-space: pre-wrap; min-height: 200px; max-height: 420px;
+            overflow-y: auto; font-family: 'Noto Sans SC', sans-serif;
+        }
+
+        /* Form */
+        .form-group { margin-bottom: 16px; }
+        .form-group label { display: block; font-size: 12px; font-weight: 500; margin-bottom: 5px; color: var(--text-secondary); }
+        .form-group label .required { color: var(--danger); margin-left: 2px; }
+        .form-input {
+            width: 100%; padding: 9px 13px;
+            border: 1px solid var(--gray-300); border-radius: var(--radius-md);
+            font-size: 13px; font-family: inherit; transition: all 0.15s ease;
+            outline: none; background: var(--input-bg); color: var(--text-primary);
+        }
+        .form-input:focus { border-color: #818cf8; box-shadow: 0 0 0 3px rgba(99,102,241,0.12); }
+        .form-input::placeholder { color: var(--text-muted); }
+        textarea.form-input { resize: vertical; min-height: 72px; }
+        select.form-input { cursor: pointer; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .form-hint { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+
+        /* Confirm dialog */
+        .confirm-icon { font-size: 44px; text-align: center; margin-bottom: 14px; }
+        .confirm-text { text-align: center; font-size: 14px; color: var(--text-secondary); margin-bottom: 22px; line-height: 1.6; }
+        .confirm-text strong { color: var(--text-primary); }
+        .confirm-actions { display: flex; gap: 10px; justify-content: center; }
+
+        /* Toast */
+        .toast-container { position: fixed; top: 20px; right: 20px; z-index: 9999; display: flex; flex-direction: column; gap: 8px; }
+        .toast {
+            padding: 12px 20px; border-radius: var(--radius-md);
+            font-size: 13px; font-weight: 500; color: #fff;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+            animation: toastIn 0.3s ease;
+            display: flex; align-items: center; gap: 8px;
+            backdrop-filter: blur(8px);
+        }
+        .toast.success { background: linear-gradient(135deg, #059669, #10b981); }
+        .toast.error { background: linear-gradient(135deg, #dc2626, #ef4444); }
+        .toast.info { background: linear-gradient(135deg, #4f46e5, #6366f1); }
+        @keyframes toastIn { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: var(--gray-300); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--gray-400); }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 1024px) {
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .card-grid { grid-template-columns: 1fr; }
+            .detail-meta-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 640px) {
+            .content-area { padding: 16px; }
+            .stats-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+            .filter-row { flex-direction: column; gap: 4px; }
+            .filter-label { min-width: auto; text-align: left; }
+            .top-header { padding: 0 16px; }
+            .header-actions .btn span.hide-mobile { display: none; }
+        }
+    </style>
+</head>
+<body data-theme="light">
+
+<!-- Toast Container -->
+<div class="toast-container" id="toastContainer"></div>
+
+<!-- Header -->
+<div class="top-header">
+    <div class="header-brand">
+        <div class="brand-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <div class="brand-text">
+            <h1>学员Offer案例库</h1>
+            <p>海马课堂 · 更多留学生的选择</p>
+        </div>
+    </div>
+    <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换深色/浅色模式">🌙</button>
+        <button class="btn btn-ghost btn-sm" onclick="resetFilters()" title="重置筛选">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+            <span class="hide-mobile">重置</span>
+        </button>
+        <button class="btn btn-ghost btn-sm" onclick="exportData()" title="导出CSV">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span class="hide-mobile">导出</span>
+        </button>
+        <button class="btn btn-ghost btn-sm" onclick="openImportModal()" title="导入">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            <span class="hide-mobile">导入</span>
+        </button>
+        <button class="btn btn-primary btn-sm" onclick="openAddModal()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            <span class="hide-mobile">新增案例</span>
+        </button>
+    </div>
+</div>
+
+<!-- Content -->
+<div class="content-area">
+    <div class="page-header">
+        <h1>上岸战绩</h1>
+        <p>管理和追踪所有学员的录取成果 · 筛选查看 · 一键生成营销内容</p>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6"/><path d="M23 11h-6"/></svg>
+                </div>
+                <div class="stat-value">3W<span class="stat-unit">+</span></div>
+                <div class="stat-label">累计辅导留学生</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                </div>
+                <div class="stat-value">460<span class="stat-unit">+</span></div>
+                <div class="stat-label">冷&热门专业覆盖</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <div class="stat-value">3V1</div>
+                <div class="stat-label">全方位提供学业支持</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 10 3 12 0v-5"/></svg>
+                </div>
+                <div class="stat-value">TOP&nbsp;100</div>
+                <div class="stat-label">院校硕博背景</div>
+            </div>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+        <select class="filter-select" id="filterYear" onchange="onFilterChange('year',this.value)">
+            <option value="all">全部届次</option>
+            <option value="2026">2026届</option>
+            <option value="2025">2025届</option>
+            <option value="2024">2024届</option>
+            <option value="2023">2023届</option>
+        </select>
+        <select class="filter-select" id="filterOfferType" onchange="onFilterChange('offerType',this.value)">
+            <option value="all">全部OFFER</option>
+            <option value="QS前100">QS前100</option>
+            <option value="QS前50">QS前50</option>
+            <option value="G5">G5</option>
+            <option value="藤校">藤校</option>
+            <option value="奖学金">奖学金</option>
+        </select>
+        <select class="filter-select" id="filterCountry" onchange="onFilterChange('country',this.value)">
+            <option value="all">全部国家</option>
+        </select>
+        <select class="filter-select" id="filterCity" onchange="onFilterChange('city',this.value)">
+            <option value="all">全部城市</option>
+        </select>
+        <div class="filter-divider"></div>
+        <div class="search-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" placeholder="搜索学校、专业、学员..." id="searchInput" oninput="applyFilters()">
+        </div>
+        <div class="filter-result-count">共 <strong id="resultCount">0</strong> 条</div>
+    </div>
+
+    <!-- Card Grid -->
+    <div class="card-grid" id="cardGrid"></div>
+    <div class="empty-state" id="emptyState" style="display:none;">
+        <div class="icon">📭</div>
+        <h3>暂无匹配案例</h3>
+        <p>请调整筛选条件后重试</p>
+    </div>
+</div>
+
+<!-- Detail Modal -->
+<div class="modal-overlay" id="detailModal">
+    <div class="modal modal-detail">
+        <div class="modal-header">
+            <div>
+                <h2 id="detailName">-</h2>
+                <p id="detailSubtitle">-</p>
+            </div>
+            <button class="modal-close" onclick="closeModal('detailModal')">✕</button>
+        </div>
+        <div class="modal-body">
+            <div class="detail-actions" id="detailActions"></div>
+            <div class="detail-meta-grid" id="detailGrid"></div>
+            <div class="detail-section">
+                <div class="detail-section-title"><span class="dot"></span>学员背景</div>
+                <div class="detail-text" id="detailBackground"></div>
+            </div>
+            <div class="detail-section">
+                <div class="detail-section-title"><span class="dot"></span>OFFER详情</div>
+                <div id="detailOffers"></div>
+            </div>
+            <div class="detail-section">
+                <div class="detail-section-title"><span class="dot"></span>辅导过程</div>
+                <div class="detail-text" id="detailProcess"></div>
+            </div>
+            <div class="generator-box">
+                <div class="generator-header">
+                    <h3>✨ 一键生成营销内容</h3>
+                    <div class="gen-actions">
+                        <button class="btn btn-ghost btn-sm" onclick="copyContent()">📋 复制</button>
+                        <button class="btn btn-primary btn-sm" onclick="regenerate()">🔄 换一个</button>
+                    </div>
+                </div>
+                <div class="template-tabs" id="templateTabs"></div>
+                <div class="generated-content" id="generatedContent">
+                    <div style="text-align:center;color:var(--text-muted);padding:40px 0;">点击上方模板标签自动生成</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add/Edit Modal -->
+<div class="modal-overlay" id="formModal">
+    <div class="modal modal-form">
+        <div class="modal-header">
+            <div>
+                <h2 id="formTitle">新增案例</h2>
+                <p id="formSubtitle">填写学员录取案例信息</p>
+            </div>
+            <button class="modal-close" onclick="closeModal('formModal')">✕</button>
+        </div>
+        <div class="modal-body">
+            <div class="form-row">
+                <div class="form-group">
+                    <label>学员姓名<span class="required">*</span></label>
+                    <input type="text" class="form-input" id="f-name" placeholder="例：张同学">
+                </div>
+                <div class="form-group">
+                    <label>届次<span class="required">*</span></label>
+                    <select class="form-input" id="f-year">
+                        <option value="2026">2026届</option>
+                        <option value="2025">2025届</option>
+                        <option value="2024">2024届</option>
+                        <option value="2023">2023届</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>背景院校<span class="required">*</span></label>
+                    <input type="text" class="form-input" id="f-school" placeholder="例：大连理工大学">
+                </div>
+                <div class="form-group">
+                    <label>专业<span class="required">*</span></label>
+                    <input type="text" class="form-input" id="f-major" placeholder="例：计算机科学">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>GPA</label>
+                    <input type="text" class="form-input" id="f-gpa" placeholder="例：3.5/4.0">
+                </div>
+                <div class="form-group">
+                    <label>雅思/托福</label>
+                    <input type="text" class="form-input" id="f-language" placeholder="例：IELTS 7.0">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>申请国家<span class="required">*</span></label>
+                    <select class="form-input" id="f-country">
+                        <!-- Dynamically populated -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>所在城市</label>
+                    <input type="text" class="form-input" id="f-city" placeholder="例：伦敦">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>OFFER信息<span class="required">*</span></label>
+                <textarea class="form-input" id="f-offers" rows="3" placeholder="每行一条，格式：学校|专业|OFFER类型&#10;例：UCL|数据科学硕士|QS前10"></textarea>
+                <div class="form-hint">每行一条OFFER，用 | 分隔学校、专业、类型</div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>服务产品</label>
+                    <input type="text" class="form-input" id="f-service" placeholder="例：全程留学规划">
+                </div>
+                <div class="form-group">
+                    <label>OFFER标签</label>
+                    <input type="text" class="form-input" id="f-offerTags" placeholder="例：G5,奖学金">
+                    <div class="form-hint">多个标签用逗号分隔</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>学员背景描述</label>
+                <textarea class="form-input" id="f-background" rows="2" placeholder="描述学员背景、申请痛点..."></textarea>
+            </div>
+            <div class="form-group">
+                <label>辅导过程</label>
+                <textarea class="form-input" id="f-process" rows="2" placeholder="描述辅导过程、关键节点..."></textarea>
+            </div>
+            <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:20px;padding-top:16px;border-top:1px solid var(--card-border);">
+                <button class="btn btn-secondary" onclick="closeModal('formModal')">取消</button>
+                <button class="btn btn-primary" onclick="saveCase()">保存案例</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Import Modal -->
+<div class="modal-overlay" id="importModal">
+    <div class="modal modal-import">
+        <div class="modal-header">
+            <div>
+                <h2>导入案例数据</h2>
+                <p>支持 CSV 格式文件</p>
+            </div>
+            <button class="modal-close" onclick="closeModal('importModal')">✕</button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <label>选择文件</label>
+                <input type="file" id="importFile" accept=".csv" class="form-input" style="padding:10px;">
+            </div>
+            <p style="font-size:12px;color:var(--text-muted);margin-bottom:20px;">
+                CSV 表头：name, year, school, major, gpa, language, country, city, offers, service, offerTags, background, process
+            </p>
+            <div style="display:flex;gap:8px;justify-content:flex-end;">
+                <button class="btn btn-secondary" onclick="closeModal('importModal')">取消</button>
+                <button class="btn btn-primary" onclick="importCSV()">开始导入</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Confirm Modal -->
+<div class="modal-overlay" id="confirmModal">
+    <div class="modal modal-confirm">
+        <div class="modal-header">
+            <div>
+                <h2 id="confirmTitle">确认操作</h2>
+            </div>
+            <button class="modal-close" onclick="closeModal('confirmModal')">✕</button>
+        </div>
+        <div class="modal-body">
+            <div class="confirm-icon" id="confirmIcon">⚠️</div>
+            <div class="confirm-text" id="confirmText"></div>
+            <div class="confirm-actions">
+                <button class="btn btn-secondary" onclick="closeModal('confirmModal')">取消</button>
+                <button class="btn btn-primary" id="confirmBtn" onclick="">确认</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// ====== COUNTRY LIST (pinyin sorted) ======
+const ALL_COUNTRIES = [
+    {name:'爱尔兰',flag:'🇮🇪'},
+    {name:'澳大利亚',flag:'🇦🇺'},
+    {name:'比利时',flag:'🇧🇪'},
+    {name:'丹麦',flag:'🇩🇰'},
+    {name:'德国',flag:'🇩🇪'},
+    {name:'俄罗斯',flag:'🇷🇺'},
+    {name:'法国',flag:'🇫🇷'},
+    {name:'芬兰',flag:'🇫🇮'},
+    {name:'韩国',flag:'🇰🇷'},
+    {name:'荷兰',flag:'🇳🇱'},
+    {name:'加拿大',flag:'🇨🇦'},
+    {name:'马来西亚',flag:'🇲🇾'},
+    {name:'美国',flag:'🇺🇸'},
+    {name:'日本',flag:'🇯🇵'},
+    {name:'瑞典',flag:'🇸🇪'},
+    {name:'瑞士',flag:'🇨🇭'},
+    {name:'泰国',flag:'🇹🇭'},
+    {name:'西班牙',flag:'🇪🇸'},
+    {name:'新加坡',flag:'🇸🇬'},
+    {name:'新西兰',flag:'🇳🇿'},
+    {name:'意大利',flag:'🇮🇹'},
+    {name:'印度',flag:'🇮🇳'},
+    {name:'英国',flag:'🇬🇧'},
+    {name:'中国澳门',flag:'🇲🇴'},
+    {name:'中国香港',flag:'🇭🇰'},
+];
+
+function populateCountrySelect(){
+    const sel = document.getElementById('f-country');
+    sel.innerHTML = ALL_COUNTRIES.map(c=>`<option value="${c.name}">${c.flag} ${c.name}</option>`).join('');
+}
+
+function populateFilterSelects(){
+    const dataCountries = [...new Set(cases.map(c=>c.country).filter(Boolean))];
+    const allCountryNames = [...new Set([...dataCountries, ...ALL_COUNTRIES.map(c=>c.name)])];
+    const sortedCountries = allCountryNames.sort((a,b)=>a.localeCompare(b,'zh-CN'));
+    const flagMap = {};
+    ALL_COUNTRIES.forEach(c=>flagMap[c.name]=c.flag);
+
+    const countrySel = document.getElementById('filterCountry');
+    const curCountry = currentFilters.country;
+    countrySel.innerHTML = '<option value="all">全部国家</option>' +
+        sortedCountries.map(c=>'<option value="'+c+'" '+(curCountry===c?'selected':'')+'>'+(flagMap[c]||'')+' '+c+'</option>').join('');
+
+    const cities = [...new Set(cases.map(c=>c.city).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'zh-CN'));
+    const citySel = document.getElementById('filterCity');
+    const curCity = currentFilters.city;
+    citySel.innerHTML = '<option value="all">全部城市</option>' +
+        cities.map(c=>'<option value="'+c+'" '+(curCity===c?'selected':'')+'>'+c+'</option>').join('');
+}
+
+function onFilterChange(key, value){
+    currentFilters[key] = value;
+    applyFilters();
+}
+
+// ====== DATA ======
+const sampleData = [
+    { id:1, name:'张同学', year:'2026', school:'大连理工大学', major:'计算机科学与技术', gpa:'3.7/4.0', language:'IELTS 7.5', country:'英国', city:'伦敦', offers:[{school:'UCL 伦敦大学学院',major:'数据科学硕士',type:'QS前10'},{school:'爱丁堡大学',major:'人工智能硕士',type:'QS前50'}], offerTags:['G5','QS前10','奖学金'], service:'全程留学规划+文书精修', background:'大连理工大学计算机专业，GPA 3.7，对AI方向有浓厚兴趣。本科期间参与过2个机器学习项目，但科研经历不足，担心G5申请竞争力不够。', process:'1) 大三开始规划，梳理学术背景，明确AI方向定位\n2) 指导参与中科院远程科研项目，产出论文\n3) 针对UCL和爱丁堡定制文书\n4) 面试辅导，模拟UCL面试场景\n5) 拿到UCL和爱丁堡双offer' },
+    { id:2, name:'李同学', year:'2025', school:'东北财经大学', major:'金融学', gpa:'3.5/4.0', language:'IELTS 7.0', country:'英国', city:'伦敦', offers:[{school:'LSE 伦敦政经',major:'金融学硕士',type:'G5'},{school:'华威大学',major:'金融数学',type:'QS前100'}], offerTags:['G5','QS前50'], service:'全程留学规划', background:'东北财经大学金融学，成绩优异，但院校背景非985/211，在G5申请中存在劣势。目标明确指向LSE金融方向。', process:'1) 重新规划选校策略\n2) 强化量化背景，自学Python和计量经济学\n3) 文书中着重突出银行实习的财务分析报告\n4) 推荐信从银行主管和学术导师两方面切入\n5) 最终成功拿到LSE和华威双offer' },
+    { id:3, name:'王同学', year:'2026', school:'辽宁大学', major:'英语专业', gpa:'3.8/4.0', language:'IELTS 8.0', country:'美国', city:'纽约', offers:[{school:'哥伦比亚大学',major:'TESOL硕士',type:'藤校'},{school:'宾夕法尼亚大学',major:'教育学硕士',type:'藤校'}], offerTags:['藤校','奖学金'], service:'全程留学规划+背景提升', background:'辽宁大学英语专业，IELTS 8.0，有两年支教经验。目标转向教育学方向，但跨专业申请藤校存在学科背景薄弱的问题。', process:'1) 建议参加Coursera教育学证书课程\n2) 深入挖掘支教经历中的教育理念\n3) 联系支教学校校长撰写推荐信\n4) SOP重点阐述从语言到教育的转型逻辑\n5) 同时被哥大和宾大录取，获哥大$5000奖学金' },
+    { id:4, name:'陈同学', year:'2025', school:'悉尼大学（2+2）', major:'商科', gpa:'3.4/4.0', language:'IELTS 7.0', country:'澳大利亚', city:'悉尼', offers:[{school:'墨尔本大学',major:'管理学硕士',type:'QS前20'},{school:'新南威尔士大学',major:'金融分析',type:'QS前50'}], offerTags:['QS前20'], service:'文书精修+选校方案', background:'大连某高校2+2项目，后两年在悉尼大学就读。希望留在澳洲读研，目标墨尔本大学商学院。', process:'1) 基于2+2背景优势，强调跨文化适应能力\n2) 补充澳洲本地商业竞赛经历\n3) 针对墨大管理学项目定制文书\n4) 快速完成申请，利用rolling录取优势\n5) 拿到墨大和新南威尔士大学双offer' },
+    { id:5, name:'赵同学', year:'2024', school:'吉林大学', major:'化学工程', gpa:'3.2/4.0', language:'TOEFL 95', country:'加拿大', city:'多伦多', offers:[{school:'多伦多大学',major:'化学工程硕士',type:'QS前50'}], offerTags:['QS前50','奖学金'], service:'全程留学规划', background:'吉林大学化工专业，GPA不算突出但有丰富实验室经历。发表过一篇SCI二区论文，希望去加拿大继续深造。', process:'1) 重点包装科研经历\n2) 联系多伦多大学目标导师套磁\n3) 强化推荐信中科研能力评价\n4) 面试准备突出实验和数据分析能力\n5) 拿到多伦多大学offer+$15000奖学金' },
+    { id:6, name:'孙同学', year:'2026', school:'大连海事大学', major:'物流管理', gpa:'3.6/4.0', language:'IELTS 6.5', country:'英国', city:'曼彻斯特', offers:[{school:'曼彻斯特大学',major:'供应链管理硕士',type:'QS前50'},{school:'利兹大学',major:'国际物流',type:'QS前100'}], offerTags:['QS前50'], service:'选校方案+文书精修', background:'大连海事大学物流管理，专业对口且成绩不错。在港航企业实习半年，有实际供应链项目经验。雅思6.5，部分热门项目要求7.0。', process:'1) 筛选出接受6.5分的高质量项目\n2) 文书中深度融合实习项目经历\n3) 建议参加短期语言班衔接\n4) 面试辅导重点训练英语表达\n5) 曼大和利兹均成功录取' },
+    { id:7, name:'刘同学', year:'2025', school:'东北大学', major:'软件工程', gpa:'3.9/4.0', language:'GRE 325 + TOEFL 105', country:'美国', city:'旧金山', offers:[{school:'CMU 卡内基梅隆',major:'计算机科学硕士',type:'CS Top 3'},{school:'佐治亚理工',major:'计算机科学',type:'QS前50'}], offerTags:['CS Top 3'], service:'全程留学规划+科研背景提升', background:'东北大学软件工程第一名，GPA 3.9，ACM竞赛区域金牌。目标是美国CS强校，但担心科研经历深度不够。', process:'1) 大三暑期推荐参加中科院软件所实习\n2) 指导完成一篇CCF-A类会议论文投稿\n3) 针对CMU MCDS项目定制SOP\n4) 联系CMU校友进行mock interview\n5) 最终被CMU MCDS和佐治亚理工同时录取' },
+    { id:8, name:'周同学', year:'2026', school:'大连外国语大学', major:'日语', gpa:'3.5/4.0', language:'JLPT N1 + IELTS 7.0', country:'中国香港', city:'香港', offers:[{school:'香港大学',major:'语言学硕士',type:'QS前30'},{school:'香港中文大学',major:'翻译硕士',type:'QS前50'}], offerTags:['QS前30'], service:'全程留学规划', background:'大连外国语日语专业，JLPT N1满分。做过中日会议口译志愿者，对翻译有深厚兴趣。', process:'1) 梳理翻译实践经历\n2) 补充语言学理论课程基础\n3) 推荐信从翻译导师和实习机构两方面获取\n4) 港大和港中文SOP分别定制\n5) 两校均成功录取' },
+    { id:9, name:'吴同学', year:'2024', school:'厦门大学', major:'会计学', gpa:'3.8/4.0', language:'GMAT 720 + IELTS 7.5', country:'新加坡', city:'新加坡', offers:[{school:'新加坡国立大学',major:'定量金融硕士',type:'QS前10'}], offerTags:['QS前10','奖学金'], service:'全程留学规划+面试辅导', background:'厦门大学会计学，GPA 3.8，GMAT 720。在四大实习过两个暑假，目标是新加坡国立大学量化金融。', process:'1) 补充金融工程和编程背景\n2) 参加CFA一级考试\n3) 面试辅导重点训练量化思维\n4) 文书突出会计+金融复合优势\n5) 成功拿到NUS定量金融offer+部分奖学金' },
+    { id:10, name:'杨同学', year:'2025', school:'天津大学', major:'建筑学', gpa:'3.6/4.0', language:'IELTS 7.0', country:'英国', city:'伦敦', offers:[{school:'AA 建筑联盟学院',major:'建筑学硕士',type:'专业Top 3'},{school:'谢菲尔德大学',major:'建筑设计',type:'QS前100'}], offerTags:['专业Top 3'], service:'作品集辅导+文书精修', background:'天津大学五年制建筑学，设计能力扎实，但作品集缺乏国际视野和概念深度。', process:'1) 作品集全面重构，增加概念研究和实验性设计\n2) 推荐参加伦敦Bartlett暑期workshop\n3) 每个项目重新撰写设计说明\n4) AA面试辅导，训练即兴设计表达\n5) 拿到AA和谢菲尔德双offer' },
+    { id:11, name:'黄同学', year:'2026', school:'武汉大学', major:'新闻传播', gpa:'3.7/4.0', language:'IELTS 7.5', country:'英国', city:'伦敦', offers:[{school:'KCL 伦敦国王学院',major:'数字媒体与文化',type:'QS前50'},{school:'利兹大学',major:'新媒体',type:'QS前100'}], offerTags:['QS前50'], service:'选校方案+文书精修', background:'武汉大学新闻传播，运营个人自媒体账号3万粉丝。希望转型数字媒体方向。', process:'1) 挖掘自媒体运营中的数据分析经验\n2) 建议选修传播学理论和方法论课程\n3) 文书将实践经验与学术研究结合\n4) 针对KCL数字媒体项目定制Writing Sample\n5) KCL和利兹均录取' },
+    { id:12, name:'郑同学', year:'2025', school:'中国医科大学', major:'临床医学', gpa:'3.4/4.0', language:'IELTS 7.0', country:'澳大利亚', city:'墨尔本', offers:[{school:'墨尔本大学',major:'公共健康硕士',type:'QS前20'}], offerTags:['QS前20'], service:'全程留学规划', background:'中国医科大学临床医学，有医院实习经历。想转公共健康方向，但缺乏公共卫生背景。', process:'1) 建议选修流行病学和生物统计学课程\n2) 在医院实习中参与公卫相关项目\n3) 文书阐述从临床到公卫的职业转型动机\n4) 推荐信强调临床中的公共健康视角\n5) 成功拿到墨尔本大学公卫offer' }
+];
+
+let cases = [];
+let currentFilters = {year:'all',offerType:'all',country:'all',city:'all',search:''};
+let currentCase = null;
+let currentTemplate = 'xiaohongshu';
+let editingId = null;
+let pendingConfirmAction = null;
+
+function loadData(){
+    const stored = localStorage.getItem('caseData_v3');
+    if(stored){
+        cases = JSON.parse(stored);
+    } else {
+        cases = JSON.parse(JSON.stringify(sampleData));
+        saveData();
+    }
+}
+
+function saveData(){
+    localStorage.setItem('caseData_v3', JSON.stringify(cases));
+}
+
+function init(){
+    loadData();
+    populateCountrySelect();
+    populateFilterSelects();
+    renderCards();
+    applyFilters();
+    loadTheme();
+}
+
+function applyFilters(){
+    currentFilters.search = document.getElementById('searchInput').value.toLowerCase();
+    const filtered = cases.filter(c=>{
+        if(currentFilters.year!=='all'&&c.year!==currentFilters.year) return false;
+        if(currentFilters.country!=='all'&&c.country!==currentFilters.country) return false;
+        if(currentFilters.city!=='all'&&c.city!==currentFilters.city) return false;
+        if(currentFilters.offerType!=='all'){
+            const tm = c.offerTags.some(t=>t.includes(currentFilters.offerType));
+            const om = c.offers.some(o=>o.type.includes(currentFilters.offerType));
+            if(!tm&&!om) return false;
+        }
+        if(currentFilters.search){
+            const s=currentFilters.search;
+            const t=`${c.name} ${c.school} ${c.major} ${c.country} ${c.city} ${c.offers.map(o=>o.school+o.major).join(' ')}`.toLowerCase();
+            if(!t.includes(s)) return false;
+        }
+        return true;
+    });
+    renderCards(filtered);
+    document.getElementById('resultCount').textContent = filtered.length;
+    document.getElementById('emptyState').style.display = filtered.length===0?'block':'none';
+    document.getElementById('cardGrid').style.display = filtered.length===0?'none':'grid';
+}
+
+function resetFilters(){
+    currentFilters = {year:'all',offerType:'all',country:'all',city:'all',search:''};
+    document.getElementById('filterYear').value = 'all';
+    document.getElementById('filterOfferType').value = 'all';
+    document.getElementById('filterCountry').value = 'all';
+    document.getElementById('filterCity').value = 'all';
+    document.getElementById('searchInput').value = '';
+    applyFilters();
+    showToast('筛选条件已重置','info');
+}
+
+function getAccentClass(country){
+    const map = {'英国':'uk','美国':'us','澳大利亚':'au','加拿大':'ca','中国香港':'hk','新加坡':'sg'};
+    return map[country]||'other';
+}
+function getFlag(country){
+    const f={'英国':'🇬🇧','美国':'🇺🇸','澳大利亚':'🇦🇺','加拿大':'🇨🇦','中国香港':'🇭🇰','新加坡':'🇸🇬'};
+    return f[country]||'🌍';
+}
+
+function renderCards(data){
+    data=data||cases;
+    const grid = document.getElementById('cardGrid');
+    if(data.length === 0){ grid.innerHTML = ''; return; }
+    grid.innerHTML = data.map(c=>{
+        const ac = getAccentClass(c.country);
+        const m = c.offers[0]; const s = c.offers[1];
+        return `
+        <div class="offer-card" onclick="openDetail(${c.id})">
+            <div class="card-accent ${ac}"></div>
+            <div class="card-body">
+                <div class="card-top-row">
+                    <div class="card-student-info">
+                        <h3>${c.name}</h3>
+                        <div class="card-school">${c.school} · ${c.major}</div>
+                    </div>
+                </div>
+                <div class="card-meta">
+                    <span class="meta-tag year">${c.year}届</span>
+                    ${c.gpa?`<span class="meta-tag gpa">GPA ${c.gpa}</span>`:''}
+                    ${c.language?`<span class="meta-tag lang">${c.language}</span>`:''}
+                    ${c.offerTags.map(t=>`<span class="meta-tag offer-type">${t}</span>`).join('')}
+                </div>
+                <div class="card-offers">
+                    <div class="card-offers-title">录取成果</div>
+                    <div class="offer-item">
+                        <div class="offer-icon main">${m.school.charAt(0)}</div>
+                        <div class="offer-detail"><h4>${m.school}</h4><p>${m.major} · ${m.type}</p></div>
+                    </div>
+                    ${s?`<div class="offer-item">
+                        <div class="offer-icon sub">${s.school.charAt(0)}</div>
+                        <div class="offer-detail"><h4>${s.school}</h4><p>${s.major} · ${s.type}</p></div>
+                    </div>`:''}
+                </div>
+                ${c.service?`<div class="card-service-tag"><span class="service-tag">✓ ${c.service}</span></div>`:''}
+            </div>
+            <div class="card-footer">
+                <div class="card-location">${getFlag(c.country)} ${c.city} · ${c.country}</div>
+                <div class="card-actions">
+                    <button class="card-action-btn" title="编辑" onclick="event.stopPropagation();openEditModal(${c.id})">✏️</button>
+                    <button class="card-action-btn del" title="删除" onclick="event.stopPropagation();confirmDelete(${c.id},'${c.name}')">🗑️</button>
+                </div>
+            </div>
+        </div>`;
+    }).join('');
+}
+
+function openDetail(id){
+    currentCase = cases.find(c=>c.id===id);
+    if(!currentCase) return;
+    const c = currentCase;
+
+    document.getElementById('detailName').textContent = c.name + ' 的录取档案';
+    document.getElementById('detailSubtitle').textContent = `${c.school} · ${c.major} · ${c.year}届 · ${c.country}`;
+
+    document.getElementById('detailActions').innerHTML = `
+        <button class="btn btn-secondary btn-sm" onclick="openEditModal(${c.id})">✏️ 编辑案例</button>
+        <button class="btn btn-danger-ghost btn-sm" onclick="closeModal('detailModal');confirmDelete(${c.id},'${c.name}')">🗑️ 删除案例</button>
+    `;
+
+    document.getElementById('detailGrid').innerHTML = `
+        <div class="detail-meta-item"><div class="label">背景院校</div><div class="value">${c.school}</div></div>
+        <div class="detail-meta-item"><div class="label">专业方向</div><div class="value">${c.major}</div></div>
+        <div class="detail-meta-item"><div class="label">GPA</div><div class="value accent">${c.gpa||'-'}</div></div>
+        <div class="detail-meta-item"><div class="label">语言成绩</div><div class="value accent">${c.language||'-'}</div></div>
+        <div class="detail-meta-item"><div class="label">目标国家</div><div class="value">${getFlag(c.country)} ${c.country} · ${c.city}</div></div>
+        <div class="detail-meta-item"><div class="label">服务产品</div><div class="value">${c.service||'-'}</div></div>
+    `;
+
+    document.getElementById('detailBackground').textContent = c.background||'暂无描述';
+
+    document.getElementById('detailOffers').innerHTML = c.offers.map(o=>`
+        <div class="offer-detail-card">
+            <div class="offer-detail-icon">${o.school.charAt(0)}</div>
+            <div class="offer-detail-info"><h4>${o.school}</h4><p>${o.major}</p></div>
+            <div class="offer-type-badge">${o.type}</div>
+        </div>
+    `).join('');
+
+    document.getElementById('detailProcess').textContent = c.process||'暂无描述';
+    setupGenerator();
+    document.getElementById('detailModal').classList.add('show');
+    document.body.style.overflow='hidden';
+}
+
+function setupGenerator(){
+    document.getElementById('templateTabs').innerHTML = `
+        <button class="template-tab active" onclick="switchTemplate('xiaohongshu',this)">📕 小红书</button>
+        <button class="template-tab" onclick="switchTemplate('wechat',this)">💬 公众号</button>
+        <button class="template-tab" onclick="switchTemplate('moments',this)">📸 朋友圈</button>
+        <button class="template-tab" onclick="switchTemplate('community',this)">👥 社群</button>
+    `;
+    currentTemplate='xiaohongshu';
+    generateContent();
+}
+
+function switchTemplate(tpl,el){
+    currentTemplate=tpl;
+    document.querySelectorAll('.template-tab').forEach(t=>t.classList.remove('active'));
+    el.classList.add('active');
+    generateContent();
+}
+
+// ====== CONTENT GENERATOR (with random variants) ======
+const pick = arr => arr[Math.floor(Math.random()*arr.length)];
+
+const XHS_TITLES = [
+    '{country}留学上岸！{school}到{mainSchool}的逆袭之路',
+    '拿到{mainSchool}offer的那一刻，所有努力都值了✨',
+    '{school}→{mainSchool}！{year}届留学实录',
+    '双offer收割机！{name}斩获{mainSchool}录取',
+    '从{school}出发，我的{country}留学之路',
+    '被{mainSchool}录取是什么体验？真实分享',
+    '{year}届{country}申请全记录，{mainSchool}offer来了',
+    '{mainSchool}发offer啦！{school}背景申请复盘',
+];
+
+const WECHAT_TITLES = [
+    '从{school}到{mainSchool}：{name}的{country}留学之路',
+    'GPA{gpa}斩获{mainSchool}offer，{name}的申请故事',
+    '{school}{name}：如何拿到{mainSchool}录取？',
+    '非985/211也能拿{mainSchool}？{name}的突围经验',
+    '{year}届申请季：{name}的{country}留学完整复盘',
+];
+
+const WECHAT_SUMMARIES = [
+    '{name}的成功离不开科学的规划和专业的指导。如果你也想实现留学梦想，欢迎联系我们，让我们帮你制定个性化方案。',
+    '从背景梳理到选校定位，从文书打磨到面试准备，每一步都至关重要。{name}的经历证明了：正确的规划+执行力=理想的offer。',
+    '留学申请不是玄学，而是一套系统的方法论。{name}的案例再次说明，只要策略正确、准备充分，名校并非遥不可及。',
+    '希望{name}的经历能给你一些启发。每个人的起点不同，但通过科学规划，都能找到属于自己的留学路径。'
+];
+
+const MOMENTS_OPENS = [
+    '🎉 又一枚{country}offer！恭喜{name}',
+    '🎊 今年的第N枚{country}offer来啦！',
+    '🔥 双offer！恭喜{name}成功上岸{country}',
+    '✨ 好消息！{name}拿到{mainSchool}录取了',
+    '🏆 又一名学员成功斩获{mainSchool}offer！',
+];
+
+const MOMENTS_CLOSINGS = [
+    '{country}留学申请进行中，欢迎咨询 ✨',
+    '你的dream school也在等你，快来聊聊 💬',
+    '{year}申请季还在继续，下一个就是你 🚀',
+    '科学规划，精准申请，让每一份努力都有回报 💪',
+    '留学这条路，我们陪你一起走 👋',
+];
+
+const COMMUNITY_OPENS = [
+    '大家好，分享一个最新的成功案例，希望对正在准备申请的同学有帮助 🤝',
+    '哈喽大家！今天分享一个超棒的案例，建议收藏 ✨',
+    '分享一个真实案例，正在准备申请的同学可以参考一下 📌',
+    '又到了案例分享时间！这次是一位{country}方向的同学 💡',
+];
+
+const COMMUNITY_TIPS = [
+    ['尽早规划，留足准备时间', '选校要拉开梯度，冲刺+匹配+保底', '文书要有自己的故事，不要模板化', '方法总比困难多，坚持就是胜利'],
+    ['明确目标，制定时间线', '背景不足就补背景，语言不够就刷分', '推荐信要提前联系，给老师留足时间', '面试准备要充分，自信很重要'],
+    ['了解目标院校的偏好和要求', 'GPA是硬指标，尽量保持', '实习和科研经历是加分项', '找专业的团队辅助规划会更高效'],
+];
+
+function generateContent(){
+    if(!currentCase) return;
+    const c=currentCase, m=c.offers[0];
+    let content='';
+
+    // Helper to fill template variables
+    const v = s => s.replace(/\{name\}/g,c.name).replace(/\{school\}/g,c.school)
+        .replace(/\{mainSchool\}/g,m.school).replace(/\{year\}/g,c.year)
+        .replace(/\{country\}/g,c.country).replace(/\{gpa\}/g,c.gpa||'优秀')
+        .replace(/\{major\}/g,c.major);
+
+    if(currentTemplate==='xiaohongshu'){
+        const title = v(pick(XHS_TITLES));
+        const bgSection = c.background || '申请过程中遇到了不少挑战，但通过系统规划成功突围。';
+        const tips = pick([
+            '💡 申请心得：\n1. 尽早规划，明确方向\n2. 文书是核心竞争力，一定要用心打磨\n3. 选校拉开梯度，不要只盯一所\n4. 遇到困难不要放弃，坚持就有希望',
+            '💡 给学弟学妹的建议：\n1. GPA是硬通货，好好学习是第一位的\n2. 语言成绩尽早达标，不要拖到最后\n3. 背景提升要趁早，实习科研两不误\n4. 找对方向比努力更重要',
+            '💡 总结几点关键经验：\n1. 明确目标院校的录取偏好\n2. 文书要讲好"为什么选我"的故事\n3. 推荐信找了解你的人写\n4. 面试准备要充分，展现真实自己',
+        ]);
+        const hashtags = pick([
+            `#${c.country}留学 #${m.school.replace(/\s/g,'')} #留学申请 #${c.year}届 #留学offer #留学经验 #${c.major} #留学规划`,
+            `#${c.country}留学 #${m.school.replace(/\s/g,'')} #offer季 #留学日记 #${c.major}申请 #留学准备 #申请复盘`,
+            `#${c.country}留学 #${c.major} #留学规划 #${m.school.replace(/\s/g,'')} #${c.year}fall #留学分享 #录取通知`,
+        ]);
+
+        content = title + '\n\n' +
+            '🎓 背景信息\n• 本科：' + c.school + '\n• 专业：' + c.major + '\n• GPA：' + (c.gpa||'未透露') + '\n• 语言：' + (c.language||'未透露') + '\n\n' +
+            '📋 申请痛点\n' + bgSection + '\n\n' +
+            '🎯 OFFER结果\n✅ ' + m.school + ' — ' + m.major + '（' + m.type + '）\n' +
+            c.offers.slice(1).map(o=>'✅ '+o.school+' — '+o.major+'（'+o.type+'）').join('\n') +
+            '\n\n' + (c.process||'').replace(/\d+\)/g,m=>'\n'+m) +
+            '\n\n' + tips + '\n\n' + hashtags;
+
+    } else if(currentTemplate==='wechat'){
+        const title = v(pick(WECHAT_TITLES));
+        const bgSection = c.background || '在申请过程中面临不少挑战。';
+        const processSection = c.process || '通过系统规划和专业指导克服困难。';
+        const summary = v(pick(WECHAT_SUMMARIES));
+
+        content = title + '\n\n' +
+            '一、学员背景\n' + c.name + '，' + c.year + '届毕业生，本科' + c.school + c.major + '专业。GPA ' + (c.gpa||'优秀') + '，语言' + (c.language||'达标') + '。\n\n' +
+            '二、申请难点\n' + bgSection + '\n\n' +
+            '三、辅导过程\n' + processSection + '\n\n' +
+            '四、录取结果\n' + c.offers.map(o=>'✦ '+o.school+' — '+o.major+'（'+o.type+'）').join('\n') + '\n\n' +
+            '五、总结\n' + summary;
+
+    } else if(currentTemplate==='moments'){
+        const open = v(pick(MOMENTS_OPENS));
+        const close = v(pick(MOMENTS_CLOSINGS));
+        const extras = pick([
+            c.offers.length>1 ? '同时拿到'+c.offers.length+'封offer 📬' : '',
+            c.service ? '📝 服务：'+c.service : '',
+            (c.offerTags||[]).includes('奖学金') ? '💰 斩获奖学金' : '',
+        ]).filter(Boolean).join('\n\n');
+
+        content = open + '\n\n' +
+            c.name + ' · ' + c.school + ' · ' + c.major + '\nGPA ' + (c.gpa||'-') + ' | ' + (c.language||'-') + '\n\n' +
+            '🎯 ' + m.school + '\n' + m.major + '（' + m.type + '）\n\n' +
+            (extras ? extras + '\n\n' : '') + close;
+
+    } else {
+        const open = v(pick(COMMUNITY_OPENS));
+        const tips = pick(COMMUNITY_TIPS);
+        const processText = (c.process||'通过系统规划成功拿到offer。').replace(/\d+\)/g,m=>'\n'+m);
+
+        content = open + '\n\n' +
+            '📌 基本信息\n• 本科：' + c.school + ' ' + c.major + '\n• GPA：' + (c.gpa||'-') + '\n• 语言：' + (c.language||'-') + '\n• 目标：' + c.country + '\n\n' +
+            '📌 申请经过\n' + processText + '\n\n' +
+            '📌 OFFER结果\n' + c.offers.map(o=>'• '+o.school+' '+o.major+'（'+o.type+'）').join('\n') + '\n\n' +
+            '📌 经验分享\n' + tips.map((t,i)=>(i+1)+'. '+t).join('\n') + '\n\n有问题随时留言 💬';
+
+    }
+    document.getElementById('generatedContent').textContent = content;
+}
+
+function regenerate(){ generateContent(); showToast('已重新生成内容','info'); }
+
+function copyContent(){
+    const text = document.getElementById('generatedContent').textContent;
+    navigator.clipboard.writeText(text).then(()=>{
+        showToast('已复制到剪贴板','success');
+    }).catch(()=>{
+        const ta = document.createElement('textarea');
+        ta.value = text; document.body.appendChild(ta); ta.select();
+        document.execCommand('copy'); document.body.removeChild(ta);
+        showToast('已复制到剪贴板','success');
+    });
+}
+
+// ====== CRUD ======
+function openAddModal(){
+    editingId=null;
+    document.getElementById('formTitle').textContent='新增案例';
+    document.getElementById('formSubtitle').textContent='填写学员录取案例信息';
+    ['f-name','f-school','f-major','f-gpa','f-language','f-city','f-offers','f-service','f-offerTags','f-background','f-process'].forEach(id=>document.getElementById(id).value='');
+    document.getElementById('f-year').value='2026';
+    document.getElementById('f-country').value='英国';
+    document.getElementById('formModal').classList.add('show');
+    document.body.style.overflow='hidden';
+}
+
+function openEditModal(id){
+    const c = cases.find(x=>x.id===id);
+    if(!c) return;
+    editingId = id;
+    closeModal('detailModal');
+    document.getElementById('formTitle').textContent='编辑案例';
+    document.getElementById('formSubtitle').textContent=`正在编辑 ${c.name} 的案例`;
+    document.getElementById('f-name').value = c.name;
+    document.getElementById('f-year').value = c.year;
+    document.getElementById('f-school').value = c.school;
+    document.getElementById('f-major').value = c.major;
+    document.getElementById('f-gpa').value = c.gpa||'';
+    document.getElementById('f-language').value = c.language||'';
+    document.getElementById('f-country').value = c.country;
+    document.getElementById('f-city').value = c.city||'';
+    document.getElementById('f-offers').value = c.offers.map(o=>`${o.school}|${o.major}|${o.type}`).join('\n');
+    document.getElementById('f-service').value = c.service||'';
+    document.getElementById('f-offerTags').value = (c.offerTags||[]).join(',');
+    document.getElementById('f-background').value = c.background||'';
+    document.getElementById('f-process').value = c.process||'';
+    document.getElementById('formModal').classList.add('show');
+    document.body.style.overflow='hidden';
+}
+
+function saveCase(){
+    const name=document.getElementById('f-name').value.trim();
+    const school=document.getElementById('f-school').value.trim();
+    const major=document.getElementById('f-major').value.trim();
+    if(!name||!school||!major){ showToast('请填写必填字段（姓名、院校、专业）','error'); return; }
+
+    const offersRaw=document.getElementById('f-offers').value.trim();
+    if(!offersRaw){ showToast('请至少填写一条OFFER信息','error'); return; }
+
+    const offers=offersRaw.split('\n').filter(l=>l.trim()).map(l=>{const p=l.split('|');return{school:p[0]?.trim()||'',major:p[1]?.trim()||'',type:p[2]?.trim()||''};}).filter(o=>o.school);
+    if(offers.length===0){ showToast('OFFER信息格式有误，请检查','error'); return; }
+
+    const offerTags=document.getElementById('f-offerTags').value.trim()?document.getElementById('f-offerTags').value.split(',').map(t=>t.trim()).filter(Boolean):[];
+    const newCase={
+        id: editingId || Date.now(),
+        name, year: document.getElementById('f-year').value, school, major,
+        gpa: document.getElementById('f-gpa').value.trim(),
+        language: document.getElementById('f-language').value.trim(),
+        country: document.getElementById('f-country').value,
+        city: document.getElementById('f-city').value.trim(),
+        offers, offerTags,
+        service: document.getElementById('f-service').value.trim(),
+        background: document.getElementById('f-background').value.trim(),
+        process: document.getElementById('f-process').value.trim()
+    };
+
+    if(editingId){
+        const i=cases.findIndex(c=>c.id===editingId);
+        if(i!==-1) cases[i]=newCase;
+        showToast('案例已更新','success');
+    } else {
+        cases.unshift(newCase);
+        showToast('案例已添加','success');
+    }
+    saveData();
+    closeModal('formModal');
+    populateFilterSelects();
+    renderCards(); applyFilters();
+}
+
+function confirmDelete(id, name){
+    document.getElementById('confirmIcon').textContent = '🗑️';
+    document.getElementById('confirmTitle').textContent = '确认删除';
+    document.getElementById('confirmText').innerHTML = '确定要删除 <strong>'+name+'</strong> 的案例吗？<br>此操作不可撤销。';
+    const btn = document.getElementById('confirmBtn');
+    btn.textContent = '确认删除';
+    btn.className = 'btn btn-sm';
+    btn.style.background = 'var(--danger)';
+    btn.style.color = '#fff';
+    btn.onclick = ()=>{ deleteCase(id); closeModal('confirmModal'); };
+    document.getElementById('confirmModal').classList.add('show');
+    document.body.style.overflow='hidden';
+}
+
+function deleteCase(id){
+    cases = cases.filter(c=>c.id!==id);
+    saveData();
+    populateFilterSelects();
+    renderCards(); applyFilters();
+    showToast('案例已删除','success');
+}
+
+// ====== IMPORT / EXPORT ======
+function openImportModal(){
+    document.getElementById('importFile').value = '';
+    document.getElementById('importModal').classList.add('show');
+    document.body.style.overflow='hidden';
+}
+
+function importCSV(){
+    const file=document.getElementById('importFile').files[0];
+    if(!file){ showToast('请选择CSV文件','error'); return; }
+    const reader=new FileReader();
+    reader.onload=(e)=>{
+        try {
+            const lines=e.target.result.split('\n').filter(l=>l.trim());
+            if(lines.length<2){ showToast('CSV格式错误：至少需要表头和一行数据','error'); return; }
+            const headers=lines[0].split(',').map(h=>h.trim().replace(/^"|"$/g,''));
+            let count = 0;
+            for(let i=1;i<lines.length;i++){
+                const vals=lines[i].split(',').map(v=>v.trim().replace(/^"|"$/g,''));
+                const get=h=>vals[headers.indexOf(h)]||'';
+                const name = get('name');
+                if(!name) continue;
+                const offers=get('offers')?get('offers').split(';').map(o=>{const p=o.split('|');return{school:p[0]||'',major:p[1]||'',type:p[2]||''};}).filter(o=>o.school):[];
+                if(offers.length===0) continue;
+                const tags=get('offerTags')?get('offerTags').split(';').filter(Boolean):[];
+                cases.push({id:Date.now()+i,name,year:get('year')||'2026',school:get('school')||'',major:get('major')||'',gpa:get('gpa'),language:get('language'),country:get('country')||'英国',city:get('city'),offers,offerTags:tags,service:get('service'),background:get('background'),process:get('process')});
+                count++;
+            }
+            if(count===0){ showToast('未找到有效案例数据，请检查CSV格式','error'); return; }
+            saveData();
+            closeModal('importModal');
+            populateFilterSelects();
+            renderCards(); applyFilters();
+            showToast('成功导入 '+count+' 条案例','success');
+        } catch(err){
+            showToast('CSV解析失败：'+err.message,'error');
+        }
+    };
+    reader.readAsText(file);
+}
+
+function exportData(){
+    if(cases.length===0){ showToast('暂无数据可导出','error'); return; }
+    const h=['name','year','school','major','gpa','language','country','city','service','offerTags','background','process','offers'];
+    const csv=[h.join(',')];
+    cases.forEach(c=>{csv.push(h.map(k=>{let v='';if(k==='offers')v=c.offers.map(o=>o.school+'|'+o.major+'|'+o.type).join(';');else if(k==='offerTags')v=(c.offerTags||[]).join(';');else v=c[k]||'';return '"'+v+'"';}).join(','));});
+    const blob=new Blob(['\uFEFF'+csv.join('\n')],{type:'text/csv;charset=utf-8'});
+    const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='案例库_'+new Date().toISOString().slice(0,10)+'.csv';a.click();
+    showToast('已导出 '+cases.length+' 条案例','success');
+}
+
+// ====== THEME ======
+function toggleTheme(){
+    const body = document.body;
+    const current = body.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    body.setAttribute('data-theme', next);
+    document.getElementById('themeToggle').textContent = next === 'dark' ? '☀️' : '🌙';
+    localStorage.setItem('theme', next);
+}
+
+function loadTheme(){
+    const saved = localStorage.getItem('theme') || 'light';
+    document.body.setAttribute('data-theme', saved);
+    document.getElementById('themeToggle').textContent = saved === 'dark' ? '☀️' : '🌙';
+}
+
+// ====== UI HELPERS ======
+function closeModal(id){
+    document.getElementById(id).classList.remove('show');
+    document.body.style.overflow='';
+}
+
+function showToast(msg, type='info'){
+    const container = document.getElementById('toastContainer');
+    const toast = document.createElement('div');
+    toast.className = 'toast ' + type;
+    const icons = {success:'✅', error:'❌', info:'ℹ️'};
+    toast.innerHTML = '<span>'+(icons[type]||'')+'</span><span>'+msg+'</span>';
+    container.appendChild(toast);
+    setTimeout(()=>{
+        toast.style.opacity='0'; toast.style.transform='translateX(20px)';
+        toast.style.transition='all 0.3s ease';
+        setTimeout(()=>toast.remove(),300);
+    }, 2500);
+}
+
+// updateStats removed — stats are now static brand data
+
+// ====== EVENTS ======
+document.querySelectorAll('.modal-overlay').forEach(o=>{
+    o.addEventListener('click',e=>{if(e.target===o)closeModal(o.id);});
+});
+
+document.addEventListener('keydown',e=>{
+    if(e.key==='Escape'){
+        document.querySelectorAll('.modal-overlay.show').forEach(m=>closeModal(m.id));
+    }
+});
+
+init();
+</script>
+
+<div class="site-footer">
+    <div class="copyright">© 2026 海马课堂 · 更多留学生的选择！</div>
+    <a href="https://www.highmarktutor.com" target="_blank" rel="noopener">https://www.highmarktutor.com</a>
+</div>
+
+</body>
+</html>
